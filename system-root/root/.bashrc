@@ -73,6 +73,8 @@ export EDITOR=nano
 ##
 # If not defined use the variables from docker link
 ##
+
+# Use variables from DB container
 if [ ! -z "$DB_USER" ]; then
   export DB_USER="${DB_ENV_MYSQL_USER}"
 fi
@@ -84,4 +86,19 @@ fi
 
 if [ ! -z "$DB_NAME" ]; then
   export DB_NAME="${DB_ENV_MYSQL_DATABASE}"
+fi
+
+##
+# Use wordpress env from web container
+##
+if [ ! -z "$WP_ENV" ]; then
+  export WP_ENV="${WEB_ENV_WP_ENV}"
+fi
+
+if [ ! -z "$WP_SITEURL" ]; then
+  export WP_SITEURL="${WEB_ENV_WP_SITEURL}"
+fi
+
+if [ ! -z "$WP_HOME" ]; then
+  export WP_HOME="${WEB_ENV_WP_HOME}"
 fi
