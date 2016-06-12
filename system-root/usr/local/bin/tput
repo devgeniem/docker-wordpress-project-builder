@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# Do nothing
+# This is just a fix to prevent wp-cli from using coloured output and giving warnings:
+# root@:/var/www/project# wp user list
+# env: can't execute 'tput': No such file or directory
