@@ -22,3 +22,7 @@ RUN \
 
 # Add phpunit and php codesniffer to path
 ENV PATH ~/.composer/vendor/bin:/opt/wpcs/vendor/bin/:$PATH
+
+# PHPCS: Don't fail on warnings
+RUN \
+    phpcs --config-set ignore_warnings_on_exit true
