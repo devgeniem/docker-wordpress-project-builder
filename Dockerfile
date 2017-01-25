@@ -9,6 +9,7 @@ RUN \
     # Install openssh to clone git packages
     && apt-get -y --no-install-recommends install \
         ssh \
+        patch \
 
     # Install codesniffer with WordPress coding standards
     && composer create-project wp-coding-standards/wpcs --no-dev /opt/wpcs \
